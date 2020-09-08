@@ -17,13 +17,14 @@ namespace RMDataLibrary.DataAccess
             _sql = sql;
         }
 
-
+        // Insert food into database
         public async Task InsertFood(FoodModel food)
         {
             await _sql.SaveData<FoodModel>("Food_Insert", food);
         }
 
 
+        // Get all foods info from database
         public async Task<List<FoodModel>> GetAllFoods()
         {
             var results = await _sql.LoadData<FoodModel, dynamic>("Food_GetAll", new { });
@@ -32,6 +33,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get all foods with FoodType = foodType
         public async Task<List<FoodModel>> GetFoodByType(string foodType)
         {
             var results = await _sql.LoadData<FoodModel, dynamic>("Food_GetByType", new { foodType });
@@ -40,6 +42,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get all foods in a specific order with OrderId = orderId
         public async Task<List<FoodModel>> GetFoodByOrder(int orderId)
         {
             var results = await _sql.LoadData<FoodModel, dynamic>("Food_GetByOrder", new { orderId });
@@ -48,6 +51,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get specific food info with Id = id
         public async Task<FoodModel> GetFoodById(int id)
         {
             var result = await _sql.LoadData<FoodModel, dynamic>("Food_GetById", new { id });
@@ -55,6 +59,8 @@ namespace RMDataLibrary.DataAccess
             return result.FirstOrDefault();
         }
 
+
+        // Update food info in the database
         public async Task UpdateFood(FoodModel food)
         {
             
@@ -62,6 +68,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Delete specific food from database with Id = id
         public async Task DeleteFood(int id)
         {
             await _sql.DeleteData<dynamic>("Food_Delete", new { id });

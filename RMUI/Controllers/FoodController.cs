@@ -23,7 +23,7 @@ namespace RMUI.Controllers
             return View();
         }
 
-
+        // Insert food into database
         public async Task<IActionResult> InsertFood(FoodDisplayModel food)
         {
             if (ModelState.IsValid)
@@ -43,6 +43,8 @@ namespace RMUI.Controllers
             return View();
         }
 
+
+        // View all foods as list
         public async Task<IActionResult> ViewFoods()
         {
             var allFoods = await _data.GetAllFoods();
@@ -64,7 +66,7 @@ namespace RMUI.Controllers
         }
 
       
-
+        // Edit food with Id = id
         public async Task<IActionResult> EditFood(int id)
         {
             FoodModel foundFood = await _data.GetFoodById(id);
@@ -77,12 +79,11 @@ namespace RMUI.Controllers
                 Price = foundFood.Price
             };
 
-            var p = food.Price;
-
             return View(food);
         }
 
 
+        // Update food info
         public async Task<IActionResult> UpdateFood(FoodDisplayModel food)
         {
             FoodModel updatedFood = new FoodModel
@@ -100,6 +101,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Delete food with Id = id
         public async Task<IActionResult> DeleteFood(int id)
         {
             await _data.DeleteFood(id);
