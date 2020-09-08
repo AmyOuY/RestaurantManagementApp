@@ -76,6 +76,12 @@
     <Build Include="dbo\StoredProcedures\DiningTable_Update.sql" />
     <Build Include="dbo\StoredProcedures\DiningTable_Delete.sql" />
     <Build Include="dbo\StoredProcedures\DiningTable_GetById.sql" />
+    <Build Include="dbo\Tables\People.sql" />
+    <Build Include="dbo\StoredProcedures\People_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\People_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\People_GetById.sql" />
+    <Build Include="dbo\StoredProcedures\People_Update.sql" />
+    <Build Include="dbo\StoredProcedures\People_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="RMData.refactorlog" />

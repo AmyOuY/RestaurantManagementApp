@@ -37,14 +37,14 @@ namespace RMUI.Controllers
 
                 await _data.InsertFood(newFood);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ViewFoods");
             }
 
             return View();
         }
 
 
-        // View all foods as list
+        // View all foods as as list
         public async Task<IActionResult> ViewFoods()
         {
             var allFoods = await _data.GetAllFoods();
@@ -66,7 +66,7 @@ namespace RMUI.Controllers
         }
 
       
-        // Edit food with Id = id
+        // Edit food with database Id = id
         public async Task<IActionResult> EditFood(int id)
         {
             FoodModel foundFood = await _data.GetFoodById(id);
@@ -101,7 +101,7 @@ namespace RMUI.Controllers
         }
 
 
-        // Delete food with Id = id
+        // Delete food with database Id = id
         public async Task<IActionResult> DeleteFood(int id)
         {
             await _data.DeleteFood(id);

@@ -40,6 +40,7 @@ namespace RMUI
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFoodData, FoodData>();
             services.AddTransient<IDiningTableData, DiningTableData>();
+            services.AddTransient<IPersonData, PersonData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

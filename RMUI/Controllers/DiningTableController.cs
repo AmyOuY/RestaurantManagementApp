@@ -36,7 +36,7 @@ namespace RMUI.Controllers
 
                 await _data.InsertTable(newTable);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ViewDiningTables");
             }
 
             return View();
@@ -64,7 +64,7 @@ namespace RMUI.Controllers
         }
 
 
-        // Edit DiningTable with Id = id
+        // Edit DiningTable with database Id = id
         public async Task<IActionResult> EditDiningTable(int id)
         {
             DiningTableModel foundTable = await _data.GetTableById(id);
@@ -96,7 +96,7 @@ namespace RMUI.Controllers
         }
 
 
-        // Delete DiningTable with Id = id
+        // Delete DiningTable with database Id = id
         public async Task<IActionResult> DeleteDiningTable(int id)
         {
             await _data.DeleteTable(id);
