@@ -7,7 +7,6 @@ namespace RMDataLibrary.DataAccess
     public interface IFoodData
     {
         Task<List<FoodModel>> GetAllFoods();
-        Task<List<FoodModel>> GetFoodByOrder(int orderId);
         Task<List<FoodModel>> GetFoodByType(string foodType);
         Task<FoodModel> GetFoodById(int id);
         Task InsertFood(FoodModel food);

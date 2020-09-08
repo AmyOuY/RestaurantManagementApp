@@ -2,12 +2,10 @@
 	@Id int = 0 output,
 	@FoodType nvarchar(100),
 	@FoodName nvarchar(100),
-	@Price money,
-	@Quantity int,
-	@OrderId int
+	@Price money
 AS
-	insert into dbo.Food (FoodType, FoodName, Price, Quantity, OrderId)
-	values (@FoodType, @FoodName, @Price, @Quantity, @OrderId);
+	insert into dbo.Food (FoodType, FoodName, Price)
+	values (@FoodType, @FoodName, @Price);
 
 	select @Id = SCOPE_IDENTITY();
 RETURN 0

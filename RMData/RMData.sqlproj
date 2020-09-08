@@ -66,7 +66,6 @@
     <Build Include="dbo\StoredProcedures\Food_Insert.sql" />
     <Build Include="dbo\StoredProcedures\Food_GetAll.sql" />
     <Build Include="dbo\StoredProcedures\Food_GetByType.sql" />
-    <Build Include="dbo\StoredProcedures\Food_GetByOrder.sql" />
     <Build Include="dbo\StoredProcedures\Food_Delete.sql" />
     <Build Include="dbo\StoredProcedures\Food_Update.sql" />
     <Build Include="dbo\StoredProcedures\Food_GetById.sql" />
@@ -82,6 +81,7 @@
     <Build Include="dbo\StoredProcedures\People_GetById.sql" />
     <Build Include="dbo\StoredProcedures\People_Update.sql" />
     <Build Include="dbo\StoredProcedures\People_Delete.sql" />
+    <Build Include="dbo\Tables\Order.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="RMData.refactorlog" />

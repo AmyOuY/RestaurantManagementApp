@@ -2,13 +2,11 @@
 	@Id int,
 	@FoodType nvarchar(100),
 	@FoodName nvarchar(100),
-	@Price money,
-	@Quantity int,
-	@OrderId int
+	@Price money
 
 AS
 	update dbo.Food 
-	set FoodType = @FoodType, FoodName = @FoodName, Price = @Price, Quantity = @Quantity, OrderId = @OrderId
+	set FoodType = @FoodType, FoodName = @FoodName, Price = @Price
 	where Id = @Id;
 
 RETURN 0

@@ -17,11 +17,5 @@ namespace RMDataLibrary.Models
 
         // Price of food
         public decimal Price { get; set; }
-
-        // Quantity of food in a specific order
-        public int Quantity { get; set; }
-
-        // Id  of Order that ordered this food
-        public int OrderId { get; set; } 
     }
 }

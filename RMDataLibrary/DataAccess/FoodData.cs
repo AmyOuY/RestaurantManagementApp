@@ -42,15 +42,6 @@ namespace RMDataLibrary.DataAccess
         }
 
 
-        // Get all foods in a specific order with OrderId = orderId
-        public async Task<List<FoodModel>> GetFoodByOrder(int orderId)
-        {
-            var results = await _sql.LoadData<FoodModel, dynamic>("Food_GetByOrder", new { orderId });
-
-            return results;
-        }
-
-
         // Get specific food info with Id = id
         public async Task<FoodModel> GetFoodById(int id)
         {
@@ -62,8 +53,7 @@ namespace RMDataLibrary.DataAccess
 
         // Update food info in the database
         public async Task UpdateFood(FoodModel food)
-        {
-            
+        {           
             await _sql.SaveData<FoodModel>("Food_Update", food);
         }
 
