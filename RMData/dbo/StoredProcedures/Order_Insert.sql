@@ -1,15 +1,16 @@
 ﻿CREATE PROCEDURE [dbo].[Order_Insert]
 	@Id int = 0 output,
-	@ServerId int,
 	@DiningTableId int,
-	@OrderDate datetime2,
+	@ServerId int,
 	@SubTotal money,
 	@Tax money,
-	@Total money
-
+	@Total money,
+	@CreatedDate datetime2,
+	@BillPaid bit
+	
 AS
-	insert into dbo.[Order] (ServerId, DiningTableId, OrderDate, SubTotal, Tax, Total)
-	values (@ServerId, @DiningTableId, @OrderDate, @SubTotal, @Tax, @Total);
+	insert into dbo.[Order] (DiningTableId, ServerId, SubTotal, Tax, Total, CreatedDate, BillPaid)
+	values (@DiningTableId, @ServerId, @SubTotal, @Tax, @Total, @CreatedDate, @BillPaid);
 
 	select @Id = SCOPE_IDENTITY();
 

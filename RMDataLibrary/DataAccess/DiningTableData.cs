@@ -32,6 +32,17 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get all DiningTable numbers
+        public async Task<List<int>> GetAllTableNumbers()
+        {
+            var results = await _sql.LoadData< DiningTableModel, dynamic>("DiningTable_GetAll", new { });
+
+            List<int> allTableNumbers = results.Select(x => x.TableNumber).ToList();
+
+            return allTableNumbers;
+        }
+
+
         // Get specific DiningTable info with Id = id
         public async Task<DiningTableModel> GetTableById(int id)
         {
@@ -40,6 +51,13 @@ namespace RMDataLibrary.DataAccess
             return results.FirstOrDefault();
         }
 
+
+        public async Task<DiningTableModel> GetTableByTableNumber(int tableNumber)
+        {
+            var results = await _sql.LoadData<DiningTableModel, dynamic>("DiningTable_GetByTableNumber", new { TableNumber = tableNumber });
+
+            return results.FirstOrDefault();
+        }
 
         // Update DiningTable info in database
         public async Task UpdateTable(DiningTableModel table)

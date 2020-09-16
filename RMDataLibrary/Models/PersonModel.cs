@@ -23,5 +23,11 @@ namespace RMDataLibrary.Models
 
         // Employee Cell Phone Number
         public string CellPhoneNumber { get; set; }
+
+        public string FullName
+        { get {
+                return $"{FirstName} {LastName}";
+            }
+        }
     }
 }

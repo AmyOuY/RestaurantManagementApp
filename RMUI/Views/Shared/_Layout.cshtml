@@ -37,6 +37,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Foods</a>
                             <div class="dropdown-menu">
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Food" asp-action="InsertFoodType">Insert Food Type</a>
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Food" asp-action="ViewFoodTypes">View Food Types</a>
                                 <a class="dropdown-item text-dark" asp-area="" asp-controller="Food" asp-action="InsertFood">Insert Food</a>
                                 <a class="dropdown-item text-dark" asp-area="" asp-controller="Food" asp-action="ViewFoods">View Foods</a>
                             </div>
@@ -47,6 +49,15 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item text-dark" asp-area="" asp-controller="DiningTable" asp-action="InsertDiningTable">Insert Table</a>
                                 <a class="dropdown-item text-dark" asp-area="" asp-controller="DiningTable" asp-action="ViewDiningTables">View Tables</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Orders</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Order" asp-action="CreateOrder">Create Order</a>
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Order" asp-action="ViewOrders">View Orders</a>
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Order" asp-action="SearchOrder">Search Order</a>
                             </div>
                         </li>
                     </ul>

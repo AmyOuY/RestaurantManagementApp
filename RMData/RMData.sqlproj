@@ -84,9 +84,30 @@
     <Build Include="dbo\Tables\Order.sql" />
     <Build Include="dbo\Tables\OrderDetail.sql" />
     <Build Include="dbo\StoredProcedures\Order_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\DiningTable_GetByTableNumber.sql" />
+    <Build Include="dbo\StoredProcedures\People_GetByFullName.sql" />
+    <Build Include="dbo\StoredProcedures\Food_GetByName.sql" />
+    <Build Include="dbo\Tables\FoodType.sql" />
+    <Build Include="dbo\StoredProcedures\FoodType_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\FoodType_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\Food_GetByTypeId.sql" />
+    <Build Include="dbo\StoredProcedures\Food_GetTypeIdByFoodType.sql" />
+    <Build Include="dbo\StoredProcedures\Order_GetAllUnpaid.sql" />
     <Build Include="dbo\StoredProcedures\OrderDetail_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\OrderDetail_GetByDiningTable.sql" />
+    <Build Include="dbo\StoredProcedures\Order_GetById.sql" />
+    <Build Include="dbo\StoredProcedures\Order_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\Order_GetByDiningTable.sql" />
+    <Build Include="dbo\StoredProcedures\OrderDetail_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\Order_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\OrderDetail_Update.sql" />
+    <Build Include="dbo\StoredProcedures\Order_Update.sql" />
+    <Build Include="dbo\StoredProcedures\OrderDetail_GetById.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocation\RMData.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="RMData.refactorlog" />
   </ItemGroup>
 </Project>

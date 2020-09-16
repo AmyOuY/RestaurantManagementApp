@@ -34,5 +34,14 @@ namespace RMUI.Models
         [Display(Name = "Cell Phone Number")]
         [Phone]
         public string CellPhoneNumber { get; set; }
+
+
+        [Display(Name = "Full Name")]
+        public string FullName {
+            get
+            {
+                return $"{ FirstName } { LastName }";
+            }
+        }
     }
 }

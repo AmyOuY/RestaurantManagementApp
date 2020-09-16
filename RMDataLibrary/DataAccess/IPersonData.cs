@@ -9,6 +9,7 @@ namespace RMDataLibrary.DataAccess
         Task DeletePerson(int id);
         Task<List<PersonModel>> GetAllPeople();
         Task<PersonModel> GetPersonById(int id);
+        Task<PersonModel> GetPersonByFullName(string firstName, string lastName);
         Task InsertPerson(PersonModel person);
         Task UpdatePerson(PersonModel person);
     }

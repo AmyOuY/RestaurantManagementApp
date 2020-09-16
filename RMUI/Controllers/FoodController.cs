@@ -23,6 +23,42 @@ namespace RMUI.Controllers
             return View();
         }
 
+
+        public async Task<IActionResult> InsertFoodType(FoodTypeDisplayModel fType)
+        {
+            if (ModelState.IsValid)
+            {
+                FoodTypeModel newFoodType = new FoodTypeModel
+                {
+                    FoodType = fType.FoodType,
+                };
+
+                await _data.InsertFoodType(newFoodType);
+
+                return RedirectToAction("ViewFoodTypes");
+            }
+            return View();
+        }
+
+
+        public async Task<IActionResult> ViewFoodTypes()
+        {
+            var results = await _data.GetAllFoodTypes();
+
+            List<FoodTypeDisplayModel> foodTypes = new List<FoodTypeDisplayModel>();
+            foreach (var type in results)
+            {
+                foodTypes.Add(new FoodTypeDisplayModel
+                {
+                    Id = type.Id,
+                    FoodType = type.FoodType
+                });
+            }
+
+            return View(foodTypes);
+        }
+
+
         // Insert food into database
         public async Task<IActionResult> InsertFood(FoodDisplayModel food)
         {
@@ -34,6 +70,10 @@ namespace RMUI.Controllers
                     FoodName = food.FoodName,
                     Price = food.Price
                 };
+
+                int typeId = await _data.GetTypeIdByFoodType(newFood.FoodType);
+
+                newFood.TypeId = typeId;
 
                 await _data.InsertFood(newFood);
 
@@ -58,7 +98,8 @@ namespace RMUI.Controllers
                     Id = food.Id,
                     FoodType = food.FoodType,
                     FoodName = food.FoodName,
-                    Price = food.Price
+                    Price = food.Price,
+                    TypeId = food.TypeId
                 });
             }
 
@@ -76,7 +117,8 @@ namespace RMUI.Controllers
                 Id = id,
                 FoodType = foundFood.FoodType,
                 FoodName = foundFood.FoodName,
-                Price = foundFood.Price
+                Price = foundFood.Price,
+                TypeId = foundFood.TypeId
             };
 
             return View(food);
@@ -91,9 +133,9 @@ namespace RMUI.Controllers
                 Id = food.Id,
                 FoodType = food.FoodType,
                 FoodName = food.FoodName,
-                Price = food.Price
+                Price = food.Price,
+                TypeId = food.TypeId
             };
-
 
             await _data.UpdateFood(updatedFood);
 

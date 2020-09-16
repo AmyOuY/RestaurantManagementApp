@@ -33,14 +33,28 @@ namespace RMDataLibrary.DataAccess
         }
 
 
-        // Get all foods with FoodType = foodType
-        public async Task<List<FoodModel>> GetFoodByType(string foodType)
+        public async Task InsertFoodType(FoodTypeModel foodType)
         {
-            var results = await _sql.LoadData<FoodModel, dynamic>("Food_GetByType", new { foodType });
+            await _sql.SaveData<FoodTypeModel>("FoodType_Insert", foodType);
+        }
+
+
+        public async Task<List<FoodTypeModel>> GetAllFoodTypes()
+        {
+            var results = await _sql.LoadData<FoodTypeModel, dynamic>("FoodType_GetAll", new { });
 
             return results;
         }
 
+
+        public async Task<List<FoodModel>> GetFoodByTypeId(int typeId)
+        {
+            var results = await _sql.LoadData<FoodModel, dynamic>("Food_GetByTypeId", new { typeId });
+
+            return results;
+        }
+
+        
 
         // Get specific food info with Id = id
         public async Task<FoodModel> GetFoodById(int id)
@@ -48,6 +62,22 @@ namespace RMDataLibrary.DataAccess
             var result = await _sql.LoadData<FoodModel, dynamic>("Food_GetById", new { id });
 
             return result.FirstOrDefault();
+        }
+
+
+        public async Task<int> GetTypeIdByFoodType(string foodType)
+        {
+            var results = await _sql.LoadData<int, dynamic>("Food_GetTypeIdByFoodType", new { foodType });
+
+            return results.FirstOrDefault();
+        }
+
+
+        public async Task<FoodModel> GetFoodByName(string foodName)
+        {
+            var results = await _sql.LoadData<FoodModel, dynamic>("Food_GetByName", new { FoodName = foodName });
+
+            return results.FirstOrDefault();
         }
 
 

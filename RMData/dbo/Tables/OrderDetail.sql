@@ -1,10 +1,12 @@
 ﻿CREATE TABLE [dbo].[OrderDetail]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [OrderId] INT NOT NULL, 
+    [DiningTableId] INT NOT NULL, 
+    [ServerId] INT NOT NULL, 
     [FoodId] INT NOT NULL, 
     [Quantity] INT NOT NULL, 
-    [OrderPrice] MONEY NOT NULL, 
-    CONSTRAINT [FK_OrderDetail_ToOrder] FOREIGN KEY (OrderId) REFERENCES [Order](Id), 
-    CONSTRAINT [FK_OrderDetail_ToFood] FOREIGN KEY (FoodId) REFERENCES Food(Id)
+    [OrderDate] DATETIME2 NOT NULL DEFAULT getutcdate() ,    
+    CONSTRAINT [FK_OrderDetail_ToFood] FOREIGN KEY (FoodId) REFERENCES Food(Id), 
+    CONSTRAINT [FK_OrderDetail_ToOrder] FOREIGN KEY (DiningTableId) REFERENCES DiningTable(Id), 
+    CONSTRAINT [FK_OrderDetail_ToPeople] FOREIGN KEY (ServerId) REFERENCES People(Id) 
 )

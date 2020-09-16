@@ -25,5 +25,8 @@ namespace RMUI.Models
         [Required(ErrorMessage = "The Price field is required.")]
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
+
+       
+        public int TypeId { get; set; }
     }
 }

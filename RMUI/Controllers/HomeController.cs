@@ -36,5 +36,23 @@ namespace RMUI.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult PlaceOrderError()
+        {
+            return View();
+        }
+
+
+        public IActionResult NoOrderError()
+        {
+            return View();
+        }
+
+
+        public IActionResult TableNotExistError()
+        {
+            return View();
+        }
     }
 }

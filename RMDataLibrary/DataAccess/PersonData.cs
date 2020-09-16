@@ -39,6 +39,13 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        public async Task<PersonModel> GetPersonByFullName(string firstName, string lastName)
+        {
+            var results = await _sql.LoadData<PersonModel, dynamic>("People_GetByFullName", new { FirstName = firstName, LastName = lastName });
+
+            return results.FirstOrDefault();
+        }
+
         public async Task UpdatePerson(PersonModel person)
         {
             await _sql.SaveData<PersonModel>("People_Update", person);
