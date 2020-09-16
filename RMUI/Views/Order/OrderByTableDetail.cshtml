@@ -1,10 +1,10 @@
 ﻿@model RMUI.Models.OrderDetailDisplayModel
 
 @{
-    ViewData["Title"] = "Order By Table Details";
+    ViewData["Title"] = "OrderByTableDetail";
 }
 
-<h1>Order By Table Details</h1>
+<h1>An Order In Table</h1>
 
 <div>
     <hr />
@@ -18,7 +18,7 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TableNumber)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10" name="tableNumber">
             @Html.DisplayFor(model => model.TableNumber)
         </dd>
         <dt class="col-sm-2">
@@ -56,6 +56,6 @@
 
 <div>
     @Html.ActionLink("Edit", "EditOrderDetail", new { id = Model.Id }) |
-    <a asp-action="ViewOrders">Back to Order List</a>
+    @Html.ActionLink($"Back to Order List by Table Number {Model.TableNumber}", "OrderDetailsByTableNumber", new { tableNumber = Model.TableNumber })
 </div>
 

@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<RMUI.Models.OrderDetailDisplayModel>
 
 @{
-    ViewData["Title"] = "TableOrdersDetails";
+    ViewData["Title"] = "OrderDetailsByTableNumber";
 }
 
-<h1>Orders List by Table</h1>
+<h1>Order List By Table</h1>
 
 <p>
     <a asp-action="CreateOrder">Add Order</a>
@@ -37,37 +37,36 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TableNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Server)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FoodName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Quantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrderDate)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "EditOrderDetail", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "OrderByTableDetail", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "DeleteOrderDetail", new { id = item.Id })
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TableNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Server)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditOrderDetail", new { id = item.Id }) |
+                @Html.ActionLink("Details", "OrderByTableDetail", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteOrderDetail", new { id = item.Id })
+            </td>
+        </tr>
+}
     </tbody>
 </table>
 

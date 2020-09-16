@@ -222,7 +222,7 @@ namespace RMUI.Controllers
             {
                 if (order.DiningTableId == table.Id && order.BillPaid == false)
                 {
-                    return RedirectToAction("PlaceOrderError", "Home");
+                    await _order.DeleteOrder(order.Id);
                 }
             }
 
@@ -230,6 +230,7 @@ namespace RMUI.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
 
 
         public async Task<IActionResult> ViewOrders()
@@ -305,12 +306,8 @@ namespace RMUI.Controllers
 
             await _order.UpdateOrderDetail(orderDetail);
 
-            var oldOrder = await _order.GetOrderByTable(table.Id);
-            await _order.DeleteOrder(oldOrder.Id);
-            await _order.InsertOrderByTable(table.Id);
-
-            //return RedirectToAction("SaveOrderByTable", new { table.TableNumber });
-            return RedirectToAction("OrderByTableDetail", new { displayDetail.Id });
+            //return RedirectToAction("OrderByTableDetail", new { displayDetail.Id });
+            return RedirectToAction("OrderDetailsByTableNumber", new { table.TableNumber });
         }
 
 
@@ -333,7 +330,33 @@ namespace RMUI.Controllers
             };
 
             return View(displayDetail);
+        }
 
+
+        public async Task<IActionResult> OrderDetailsByTableNumber(int tableNumber)
+        {
+            var table = await _table.GetTableByTableNumber(tableNumber);
+            var orderDetails = await _order.GetOrderDetailByDiningTable(table.Id);       
+            
+            var displayDetails = new List<OrderDetailDisplayModel>();
+            foreach (var detail in orderDetails)
+            {
+                var server = await _people.GetPersonById(detail.ServerId);
+                var food = await _food.GetFoodById(detail.FoodId);
+
+                displayDetails.Add(new OrderDetailDisplayModel
+                {
+                    Id = detail.Id,
+                    TableNumber = tableNumber,
+                    Server = server.FullName,
+                    FoodName = food.FoodName,
+                    Price = food.Price,
+                    Quantity = detail.Quantity,
+                    OrderDate = detail.OrderDate
+                });
+            }
+
+            return View(displayDetails);
         }
 
 
@@ -421,9 +444,12 @@ namespace RMUI.Controllers
 
         public async Task<IActionResult> DeleteOrderDetail(int id)
         {
+            var detail = await _order.GetOrderDetailById(id);
+            var table = await _table.GetTableById(detail.DiningTableId);
+
             await _order.DeleteOrderDetail(id);
 
-            return RedirectToAction("ViewOrders");
+            return RedirectToAction("OrderDetailsByTableNumber", new { table.TableNumber });
         }
 
 

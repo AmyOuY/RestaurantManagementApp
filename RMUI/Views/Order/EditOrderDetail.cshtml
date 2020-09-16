@@ -1,7 +1,7 @@
 ﻿@model RMUI.Models.OrderDetailDisplayModel
 
 @{
-    ViewData["Title"] = "Edit Order Details";
+    ViewData["Title"] = "EditOrderDetail";
 }
 
 <h1 class="text-center">Edit Order Details</h1>
@@ -53,4 +53,7 @@
     </div>
 </div>
 
+<div class="text-center">
+    @Html.ActionLink($"Back to Order List by Table Number {Model.TableNumber}", "OrderDetailsByTableNumber", new { tableNumber = Model.TableNumber })
+</div>
 
