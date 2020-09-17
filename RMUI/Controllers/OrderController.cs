@@ -27,12 +27,8 @@ namespace RMUI.Controllers
             _order = order;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-
+        // Get all Dining Tables and populate as dropdown list items
         public async Task<List<SelectListItem>> GetAllTables()
         {
             var tables = await _table.GetAllTables();
@@ -51,6 +47,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Get all Servers and populate as dropdown list items
         public async Task<List<SelectListItem>> GetAllServers()
         {
             var persons = await _people.GetAllPeople();
@@ -69,6 +66,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Get all Food Types and populate as dropdown list items
         public async Task<List<SelectListItem>> GetFoodTypes()
         {
             var foodTypes = await _food.GetAllFoodTypes();
@@ -87,6 +85,8 @@ namespace RMUI.Controllers
         }
 
 
+        // Get all foods with FoodType Id = typeId and populate as dropdown list items
+        // return as JsonResult for use in JQuery function call
         public async Task<JsonResult> GetFoodsByTypeId(int typeId)
         {
             var foods = await _food.GetFoodByTypeId(typeId);
@@ -105,7 +105,7 @@ namespace RMUI.Controllers
         }
 
 
-
+        // Get Food object with Id = id and return as JsonResult for use in JQuery function call
         public async Task<JsonResult> GetFoodById(int id)
         {
             var food = await _food.GetFoodById(id);
@@ -113,6 +113,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Populate the table number and server fullName dropdown lists and foodType cascading dropdown list
         public async Task<IActionResult> CreateOrder()
         {
             var tables = await GetAllTables();
@@ -128,7 +129,7 @@ namespace RMUI.Controllers
         }
 
 
-
+        // Post the input food order detail for inserting into databse and repopulate dropdown lists
         [HttpPost]
         public async Task<IActionResult> CreateOrder(OrderFillInModel order)
         {
@@ -145,6 +146,7 @@ namespace RMUI.Controllers
                 await _order.InsertOrderDetail(detail);
             }
 
+            // Dropdown list content is null after data post, need to repopulate the list
             var tables = await GetAllTables();
             ViewBag.TableList = tables;
 
@@ -158,6 +160,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Check whether the input tableNumber is a valid TableNumber 
         private async Task<bool> IsValidTableNumber (int tableNumber)
         {
             var tables = await _table.GetAllTables();
@@ -166,7 +169,8 @@ namespace RMUI.Controllers
         }
 
  
-
+        // Get the list of ordered food details by dining table TableNumber = tableNumber
+        // Need to type in the tableNumber in view for search request 
         [HttpPost]
         public async Task<IActionResult> ViewOrderByTable(int tableNumber)
         {
@@ -207,6 +211,14 @@ namespace RMUI.Controllers
         }
 
 
+        // Search for order summary by typing in table number in view
+        public IActionResult SearchOrder()
+        {
+            return View();
+        }
+
+
+        // Insert into database order summary of dining table with TableNumber = tableNumber
         [HttpPost]
         public async Task<IActionResult> SaveOrderByTable(int tableNumber)
         {
@@ -215,17 +227,22 @@ namespace RMUI.Controllers
                 return RedirectToAction("TableNotExistError", "Home");
             }
 
-            var orderList = await _order.GetAllOrders();           
+            // Get order summary for all the dining tables
+            var orderList = await _order.GetAllOrders();  
+
             var table = await _table.GetTableByTableNumber(tableNumber);
 
             foreach (var order in orderList)
             {
+                // This dining table is being used and current bill not paid
+                // Will delete its current order summary and insert updated one
                 if (order.DiningTableId == table.Id && order.BillPaid == false)
                 {
                     await _order.DeleteOrder(order.Id);
                 }
             }
 
+            // Insert updated order summary of this dining table into database
             await _order.InsertOrderByTable(table.Id);
 
             return RedirectToAction("Index", "Home");
@@ -233,10 +250,12 @@ namespace RMUI.Controllers
 
 
 
+        // Get the order summary for all dining tables as a list
         public async Task<IActionResult> ViewOrders()
         {
             var orderList = await _order.GetAllOrders();
             List<OrderDisplayModel> orders = new List<OrderDisplayModel>();
+
             foreach (var order in orderList)
             {
                 var table = await _table.GetTableById(order.DiningTableId);
@@ -259,12 +278,8 @@ namespace RMUI.Controllers
         }
 
 
-        public IActionResult SearchOrder()
-        {
-            return View();
-        }
 
-
+        // Edit a specific ordered food detail with Id = id
         public async Task<IActionResult> EditOrderDetail(int id)
         {
             var detail = await _order.GetOrderDetailById(id);
@@ -287,6 +302,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Update the specific ordered food detail in database
         public async Task<IActionResult> UpdateOrderDetail(OrderDetailDisplayModel displayDetail)
         {
             var table = await _table.GetTableByTableNumber(displayDetail.TableNumber);
@@ -306,11 +322,11 @@ namespace RMUI.Controllers
 
             await _order.UpdateOrderDetail(orderDetail);
 
-            //return RedirectToAction("OrderByTableDetail", new { displayDetail.Id });
             return RedirectToAction("OrderDetailsByTableNumber", new { table.TableNumber });
         }
 
 
+        // Get a specific ordered food detail with Id = id
         public async Task<IActionResult> OrderByTableDetail(int id)
         {
             var detail = await _order.GetOrderDetailById(id);
@@ -333,6 +349,8 @@ namespace RMUI.Controllers
         }
 
 
+        // Get the list of ordered food details by dining table TableNumber = tableNumber
+        // Used for hyperlinks in views
         public async Task<IActionResult> OrderDetailsByTableNumber(int tableNumber)
         {
             var table = await _table.GetTableByTableNumber(tableNumber);
@@ -360,6 +378,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Edit a specific order summary with Id = id
         public async Task<IActionResult> EditOrder(int id)
         {
             var order = await _order.GetOrderById(id);
@@ -382,6 +401,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Update the specific order summary in database
         public async Task<IActionResult> UpdateOrder(OrderDisplayModel display)
         {
             var table = await _table.GetTableByTableNumber(display.TableNumber);
@@ -406,7 +426,7 @@ namespace RMUI.Controllers
         }
 
 
-
+        // Get the list of ordered food details for order summary with summary Id = id
         public async Task<IActionResult> TableOrdersDetails(int id)
         {
             var order = await _order.GetOrderById(id);
@@ -442,6 +462,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Delete a specific ordered food detail with Id = id
         public async Task<IActionResult> DeleteOrderDetail(int id)
         {
             var detail = await _order.GetOrderDetailById(id);
@@ -453,6 +474,7 @@ namespace RMUI.Controllers
         }
 
 
+        // Delete a specific order summary with Id = id
         public async Task<IActionResult> DeleteOrder(int id)
         {
             await _order.DeleteOrder(id);

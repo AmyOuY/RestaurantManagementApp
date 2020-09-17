@@ -22,13 +22,17 @@ namespace RMDataLibrary.DataAccess
             _config = config;
         }
 
-
+        // Insert detail of one ordered food for a specific dining table to the database
+        // detail includes ordered food detail Id, dining table Id, server Id, food Id, food quantity, food price and order date
         public async Task InsertOrderDetail(OrderDetailModel orderDetail)
         {
             await _sql.SaveData<OrderDetailModel>("OrderDetail_Insert", orderDetail);
         }
 
 
+        // Insert summary of order by a specific dining table to the database
+        // summary includes order summary Id, dining table Id, server Id, subTotal, tax, total, date and bill info
+        // Each dining table has a specific order summary
         public async Task InsertOrderByTable(int tableId)
         {
             OrderModel order = new OrderModel();
@@ -53,6 +57,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get order summary for all the dining tables
         public async Task<List<OrderModel>> GetAllOrders()
         {
             var results = await _sql.LoadData<OrderModel, dynamic>("Order_GetAll", new { });
@@ -61,6 +66,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get summary of order for a specific dining table with Id = tableId
         public async Task<OrderModel> GetOrderByTable(int tableId)
         {
             var results = await _sql.LoadData<OrderModel, dynamic>("Order_GetByDiningTable", new { DiningTableId = tableId });
@@ -69,6 +75,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get list of food ordered details by a specific dining table with Id = tableId 
         public async Task<List<OrderDetailModel>> GetOrderDetailByDiningTable(int tableId)
         {
             var results = await _sql.LoadData<OrderDetailModel, dynamic>("OrderDetail_GetByDiningTable", new { DiningTableId = tableId });
@@ -77,6 +84,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Retrieve Tax Rate info from appsettings.json 
         private decimal GetTaxRate()
         {
             string rateText = _config.GetValue<string>("TaxRate");
@@ -94,6 +102,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get a specific ordered food detail with Id = id
         public async Task<OrderDetailModel> GetOrderDetailById(int id)
         {
             var results = await _sql.LoadData<OrderDetailModel, dynamic>("OrderDetail_GetById", new { id });
@@ -102,6 +111,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get a specific order summary with Id = id
         public async Task<OrderModel> GetOrderById(int id)
         {
             var results = await _sql.LoadData<OrderModel, dynamic>("Order_GetById", new { id });
@@ -109,24 +119,29 @@ namespace RMDataLibrary.DataAccess
             return results.FirstOrDefault();
         }
 
+
+        // Update an ordered food detail
         public async Task UpdateOrderDetail(OrderDetailModel detail)
         {
             await _sql.SaveData<OrderDetailModel>("OrderDetail_Update", detail);
         }
 
 
+        // Update an order summary
         public async Task UpdateOrder(OrderModel order)
         {
             await _sql.SaveData<OrderModel>("Order_Update", order);
         }
 
 
+        // Delete a specific ordered food detail with Id = id
         public async Task DeleteOrderDetail(int id)
         {
             await _sql.DeleteData<dynamic>("OrderDetail_Delete", new { id });
         }
 
 
+        // Delete a specific order summary with Id = id
         public async Task DeleteOrder(int id)
         {
             await _sql.DeleteData<dynamic>("Order_Delete", new { id });
