@@ -159,22 +159,13 @@ namespace RMUI.Controllers
             return View();
         }
 
-
-        // Check whether the input tableNumber is a valid TableNumber 
-        private async Task<bool> IsValidTableNumber (int tableNumber)
-        {
-            var tables = await _table.GetAllTables();
-            HashSet<int> tableNumbers = new HashSet<int>(tables.Select(x => x.TableNumber));
-            return tableNumbers.Contains(tableNumber);
-        }
-
  
         // Get the list of ordered food details by dining table TableNumber = tableNumber
         // Need to type in the tableNumber in view for search request 
         [HttpPost]
         public async Task<IActionResult> ViewOrderByTable(int tableNumber)
         {
-            if (await IsValidTableNumber(tableNumber) == false)
+            if (await _table.IsValidTableNumber(tableNumber) == false)
             {
                 return RedirectToAction("TableNotExistError", "Home");
             }
@@ -183,7 +174,7 @@ namespace RMUI.Controllers
             var displayDetails = new List<OrderDetailDisplayModel>();
             var orderDetails = await _order.GetOrderDetailByDiningTable(table.Id);
 
-            if (orderDetails == null)
+            if (orderDetails.Count == 0)
             {
                 return RedirectToAction("NoOrderError", "Home");
             }
@@ -222,7 +213,7 @@ namespace RMUI.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveOrderByTable(int tableNumber)
         {
-            if (await IsValidTableNumber(tableNumber) == false)
+            if (await _table.IsValidTableNumber(tableNumber) == false)
             {
                 return RedirectToAction("TableNotExistError", "Home");
             }
@@ -434,7 +425,7 @@ namespace RMUI.Controllers
             var orderDetails = await _order.GetOrderDetailByDiningTable(table.Id);
             var displayDetails = new List<OrderDetailDisplayModel>();
 
-            if (orderDetails == null)
+            if (orderDetails.Count == 0)
             {
                 return RedirectToAction("NoOrderError", "Home");
             }

@@ -26,6 +26,8 @@ namespace RMUI.Models
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
        
+        [Required]
+        [Display(Name = "Food Type Id")]
         public int TypeId { get; set; }
     }
 }

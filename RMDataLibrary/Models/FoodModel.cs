@@ -18,6 +18,7 @@ namespace RMDataLibrary.Models
         // Price of food
         public decimal Price { get; set; }
 
+        // Id of Food Type for this food
         public int TypeId { get; set; }
     }
 }

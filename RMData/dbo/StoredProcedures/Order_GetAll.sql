@@ -2,6 +2,7 @@
 	
 AS
 	select *
-	from dbo.[Order];
+	from dbo.[Order]
+	where BillPaid = 0;
 
 RETURN 0

@@ -35,7 +35,7 @@ namespace RMDataLibrary.DataAccess
         // Get all DiningTable numbers
         public async Task<List<int>> GetAllTableNumbers()
         {
-            var results = await _sql.LoadData< DiningTableModel, dynamic>("DiningTable_GetAll", new { });
+            var results = await _sql.LoadData<DiningTableModel, dynamic>("DiningTable_GetAll", new { });
 
             List<int> allTableNumbers = results.Select(x => x.TableNumber).ToList();
 
@@ -70,6 +70,15 @@ namespace RMDataLibrary.DataAccess
         public async Task DeleteTable(int id)
         {
             await _sql.DeleteData<dynamic>("DiningTable_Delete", new { id });
+        }
+
+
+        // Check whether the input tableNumber is a valid TableNumber 
+        public async Task<bool> IsValidTableNumber(int tableNumber)
+        {
+            var tables = await GetAllTables();
+            HashSet<int> tableNumbers = new HashSet<int>(tables.Select(x => x.TableNumber));
+            return tableNumbers.Contains(tableNumber);
         }
     }
 }

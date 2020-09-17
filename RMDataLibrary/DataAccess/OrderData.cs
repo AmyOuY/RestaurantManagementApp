@@ -82,7 +82,7 @@ namespace RMDataLibrary.DataAccess
 
             return results;
         }
-
+      
 
         // Retrieve Tax Rate info from appsettings.json 
         private decimal GetTaxRate()

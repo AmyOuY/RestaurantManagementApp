@@ -16,13 +16,14 @@ namespace RMDataLibrary.DataAccess
             _sql = sql;
         }
 
-
+        // Insert person into database
         public async Task InsertPerson(PersonModel person)
         {
             await _sql.SaveData<PersonModel>("People_Insert", person);
         }
 
 
+        // Get all persons from database as a list
         public async Task<List<PersonModel>> GetAllPeople()
         {
             var results = await _sql.LoadData<PersonModel, dynamic>("People_GetAll", new { });
@@ -31,6 +32,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get Person object with Id = id
         public async Task<PersonModel> GetPersonById(int id)
         {
             var results = await _sql.LoadData<PersonModel, dynamic>("People_GetById", new { id });
@@ -39,6 +41,7 @@ namespace RMDataLibrary.DataAccess
         }
 
 
+        // Get Person object by firstName and lastName
         public async Task<PersonModel> GetPersonByFullName(string firstName, string lastName)
         {
             var results = await _sql.LoadData<PersonModel, dynamic>("People_GetByFullName", new { FirstName = firstName, LastName = lastName });
@@ -46,12 +49,15 @@ namespace RMDataLibrary.DataAccess
             return results.FirstOrDefault();
         }
 
+
+        // Update Person info in database
         public async Task UpdatePerson(PersonModel person)
         {
             await _sql.SaveData<PersonModel>("People_Update", person);
         }
 
 
+        // Delete Person from database with Id = id
         public async Task DeletePerson(int id)
         {
             await _sql.DeleteData<dynamic>("People_Delete", new { id });

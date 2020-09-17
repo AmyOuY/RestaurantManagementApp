@@ -4,6 +4,6 @@
 AS
 	select *
 	from dbo.OrderDetail
-	where DiningTableId = @DiningTableId;
+	where DiningTableId = @DiningTableId and OrderId IS NULL;
 
 RETURN 0
