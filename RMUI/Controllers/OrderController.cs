@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -12,6 +13,7 @@ using RMUI.Models;
 
 namespace RMUI.Controllers
 {
+    [Authorize(Roles = "Server")]
     public class OrderController : Controller
     {
         private readonly IFoodData _food;
