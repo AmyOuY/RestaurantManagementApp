@@ -96,5 +96,10 @@ namespace RMDataLibrary.DataAccess
         {
             await _sql.DeleteData<dynamic>("Food_Delete", new { id });
         }
+
+        public async Task DeleteFoodType(int id)
+        {
+            await _sql.DeleteData<dynamic>("FoodType_delete", new { id });
+        }
     }
 }

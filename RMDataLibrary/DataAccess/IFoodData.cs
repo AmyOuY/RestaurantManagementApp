@@ -16,5 +16,6 @@ namespace RMDataLibrary.DataAccess
         Task InsertFood(FoodModel food);
         Task UpdateFood(FoodModel food);
         Task DeleteFood(int id);
+        Task DeleteFoodType(int id);
     }
 }

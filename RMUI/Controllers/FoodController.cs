@@ -152,5 +152,13 @@ namespace RMUI.Controllers
 
             return RedirectToAction("ViewFoods");
         }
+
+
+        public async Task<IActionResult> DeleteFoodType(int id)
+        {
+            await _data.DeleteFoodType(id);
+
+            return RedirectToAction("ViewFoodTypes");
+        }
     }
 }

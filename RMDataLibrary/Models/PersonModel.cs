@@ -25,7 +25,9 @@ namespace RMDataLibrary.Models
         public string CellPhoneNumber { get; set; }
 
         public string FullName
-        { get {
+        {
+            get
+            {
                 return $"{FirstName} {LastName}";
             }
         }

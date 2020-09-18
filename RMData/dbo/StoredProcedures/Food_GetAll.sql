@@ -2,6 +2,7 @@
 
 AS
 	select * 
-	from dbo.Food;
+	from dbo.Food
+	order by FoodType;
 
 RETURN 0
