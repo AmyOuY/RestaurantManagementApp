@@ -108,6 +108,8 @@
     <Build Include="dbo\StoredProcedures\Order_UpdateBillPaid.sql" />
     <Build Include="dbo\StoredProcedures\OrderDetail_UpdateBillPaid.sql" />
     <Build Include="dbo\StoredProcedures\FoodType_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\Order_GetAllRecords.sql" />
+    <Build Include="dbo\StoredProcedures\OrderDetail_GetAllRecords.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocation\RMData.publish.xml" />

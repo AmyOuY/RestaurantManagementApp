@@ -4,11 +4,12 @@
     @ServerId int,
     @FoodId int,
     @Quantity int,
-    @OrderDate datetime2
+    @OrderDate datetime2,
+    @OrderId int
 
 AS
-	insert into dbo.OrderDetail (DiningTableId, ServerId, FoodId, Quantity, OrderDate)
-    values (@DiningTableId, @ServerId, @FoodId, @Quantity, @OrderDate);
+	insert into dbo.OrderDetail (DiningTableId, ServerId, FoodId, Quantity, OrderDate, OrderId)
+    values (@DiningTableId, @ServerId, @FoodId, @Quantity, @OrderDate, @OrderId);
 
     select @Id = SCOPE_IDENTITY();
 

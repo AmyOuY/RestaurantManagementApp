@@ -32,5 +32,7 @@ namespace RMUI.Models
         [Required]
         [Display(Name = "Order Date")]
         public DateTime OrderDate { get; set; }
+
+        public int OrderId { get; set; }
     }
 }

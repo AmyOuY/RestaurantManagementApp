@@ -22,5 +22,8 @@ namespace RMDataLibrary.Models
         // Order quantity for this food
         public int Quantity { get; set; }
         public DateTime OrderDate { get; set; } = DateTime.Now;
+
+        // Id of order summary that contains this ordered food
+        public int OrderId { get; set; }
     }
 }

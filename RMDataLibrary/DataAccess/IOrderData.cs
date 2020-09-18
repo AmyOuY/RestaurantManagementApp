@@ -17,5 +17,7 @@ namespace RMDataLibrary.DataAccess
         Task UpdateOrder(OrderModel order);
         Task DeleteOrderDetail(int id);
         Task DeleteOrder(int id);
+        Task<List<OrderModel>> GetAllOrderRecords();
+        Task<List<OrderDetailModel>> GetAllOrderDetailRecords();
     }
 }

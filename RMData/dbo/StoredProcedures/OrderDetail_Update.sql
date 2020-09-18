@@ -4,11 +4,12 @@
     @ServerId int,
     @FoodId int,
     @Quantity int,
-    @OrderDate datetime2
+    @OrderDate datetime2,
+    @OrderId int
 
 AS
 	update dbo.OrderDetail
-    set DiningTableId = @DiningTableId, ServerId = @ServerId, FoodId = @FoodId, Quantity = @Quantity, OrderDate = @OrderDate
+    set DiningTableId = @DiningTableId, ServerId = @ServerId, FoodId = @FoodId, Quantity = @Quantity, OrderDate = @OrderDate, OrderId = @OrderId
     where Id = @Id;
 
 RETURN 0

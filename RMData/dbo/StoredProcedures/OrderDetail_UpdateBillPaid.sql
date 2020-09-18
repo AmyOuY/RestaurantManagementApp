@@ -5,6 +5,6 @@
 AS
 	update dbo.OrderDetail
 	set OrderId = @OrderId
-	where DiningTableId = @DiningTableId;
+	where (OrderId IS NULL or OrderId = 0) and DiningTableId = @DiningTableId;
 
 RETURN 0

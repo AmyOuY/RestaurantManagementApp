@@ -146,5 +146,21 @@ namespace RMDataLibrary.DataAccess
         {
             await _sql.DeleteData<dynamic>("Order_Delete", new { id });
         }
+
+
+        public async Task<List<OrderModel>> GetAllOrderRecords()
+        {
+            var results = await _sql.LoadData<OrderModel, dynamic>("Order_GetAllRecords", new { });
+
+            return results;
+        }
+
+
+        public async Task<List<OrderDetailModel>> GetAllOrderDetailRecords()
+        {
+            var results = await _sql.LoadData<OrderDetailModel, dynamic>("OrderDetail_GetAllRecords", new { });
+
+            return results;
+        }
     }
 }
