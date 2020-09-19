@@ -2,52 +2,52 @@
 
 
 <hr />
-<img src="./Images/home">
-<img src="./Images/logIn">
+<img src="./Images/home.png">
+<img src="./Images/logIn.png">
 
 <hr/>
-<img src="./Images/insertPerson">
-<img src="./Images/editPerson">
-<img src="./Images/viewPersons">
+<img src="./Images/insertPerson.png">
+<img src="./Images/editPerson.png">
+<img src="./Images/viewPersons.png">
 
 <hr/>
-<img src="./Images/insertDiningTable">
-<img src="./Images/editDiningTable">
-<img src="./Images/viewDiningTables">
+<img src="./Images/insertDiningTable.png">
+<img src="./Images/editDiningTable.png">
+<img src="./Images/viewDiningTables.png">
 
 <hr/>
-<img src="./Images/insertFoodType">
-<img src="./Images/viewFoodTypes">
+<img src="./Images/insertFoodType.png">
+<img src="./Images/viewFoodTypes.png">
 
 <hr/>
-<img src="./Images/insertFood">
-<img src="./Images/editFood">
-<img src="./Images/viewFoods">
+<img src="./Images/insertFood.png">
+<img src="./Images/editFood.png">
+<img src="./Images/viewFoods.png">
 
 <hr/>
-<img src="./Images/insertOrder">
-<img src="./Images/editOrderDetail">
-<img src="./Images/orderDetail">
-<img src="./Images/orderDetails">
+<img src="./Images/insertOrder.png">
+<img src="./Images/editOrderDetail.png">
+<img src="./Images/orderDetail.png">
+<img src="./Images/orderDetails.png">
 
 <hr/>
-<img src="./Images/searchOrder">
-<img src="./Images/noOrderError">
+<img src="./Images/searchOrder.png">
+<img src="./Images/noOrderError.png">
 
 <hr/>
-<img src="./Images/viewActiveOrder">
-<img src="./Images/editOrder">
+<img src="./Images/viewActiveOrder.png">
+<img src="./Images/editOrder.png">
 
 <hr/>
-<img src="./Images/searchBill">
-<img src="./Images/billDetails">
-<img src="./Images/beforePay">
-<img src="./Images/afterPay">
+<img src="./Images/searchBill.png">
+<img src="./Images/billDetails.png">
+<img src="./Images/beforePay.png">
+<img src="./Images/afterPay.png">
 
 
 <hr />
-<img src="./Images/viewAllOrders">
-<img src="./Images/viewAllOrderDetails">
+<img src="./Images/viewAllOrders.png">
+<img src="./Images/viewAllOrderDetails.png">
 
 
 
