@@ -2,8 +2,10 @@
 
 
 <hr>
-<img src="./Images/home.png" width=400>
-<img src="./Images/logIn.png" width=400>
+<p>
+  <img src="./Images/home.png" width="400">
+  <img src="./Images/logIn.png" width="400">
+</p>
 
 <hr>
 <img src="./Images/insertPerson.png">
