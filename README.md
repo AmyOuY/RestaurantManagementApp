@@ -22,7 +22,7 @@
 <img src="./Images/viewPersons.png">
 
 <hr />
-<h3> DiningTable Controller -- inserting new dining table into database </h3> 
+<h3> DiningTable Controller -- inserting new dining table into database. The Back To Table List link will redirect to viewing all dining tables view. </h3> 
 <img src="./Images/insertDiningTable.png">
 
 <hr />
@@ -34,7 +34,7 @@
 <img src="./Images/viewDiningTables.png">
 
 <hr />
-<h3> Food Controller -- inserting new food type into database </h3>
+<h3> Food Controller -- inserting new food type into database. The Back To Food Type List link will redirect to viewing all food types view. </h3>
 <img src="./Images/insertFoodType.png">
 
 <hr />
@@ -42,7 +42,7 @@
 <img src="./Images/viewFoodTypes.png">
 
 <hr />
-<h3> Food Controller -- inserting new food into database </h3>
+<h3> Food Controller -- inserting new food into database. The Back To Food List link will redirect to viewing all foods view. </h3>
 <img src="./Images/insertFood.png">
 
 <hr />
@@ -50,11 +50,11 @@
 <img src="./Images/editFood.png">
 
 <hr />
-<h3> Food Controller -- viewing all foods, with each food belongs to a specific food type. The Create New Food link, Edit link, Details link and Delete link allows inserting new food, editing food, viewing food details and deleting food respectively. </h3>
+<h3> Food Controller -- viewing all foods, with each food belongs to a specific food type. The Create New Food link, Edit link and Delete link allows inserting new food, editing food and deleting food respectively. </h3>
 <img src="./Images/viewFoods.png">
 
 <hr />
-<h3> Order Controller -- inserting food order for a specific dining table. The table number and server name can be selected from the dropdown lists. Both the food type list and food name list are cascading dropdowns. A selected food type will trigger foods that belong to this food type to populate in the food name dropdown. When a certain food name is chosen its price will be automatically filled in the price field. The View Order Summary button allows us to view the order details of the provided dining table number. </h3>
+<h3> Order Controller -- inserting new food order for a specific dining table. The table number and server name can be selected from the dropdown lists. Both the food type list and food name list are cascading dropdowns. A selected food type will trigger foods that belong to this food type to populate in the food name dropdown. When a certain food name is chosen its price will be automatically filled in the price field. The View Order Summary button allows us to view the order details of the provided dining table number. </h3>
 <img src="./Images/insertOrder.png">
 
 <hr />
@@ -94,7 +94,7 @@
 <img src="./Images/searchBill.png">
 
 <hr />
-<h3> Bill Controller -- viewing the bill details returned by bill search. If there is no question about the bill we can type in the table number and request bill payment. The Back To Order List link allows redirecting to the summary of all active orders page.</h3>
+<h3> Bill Controller -- viewing the bill details returned by bill search. If there is no question about the bill we can press the Pay Bill button to request bill payment. The Back To Order List link allows redirecting to the summary of all active orders page.</h3>
 <img src="./Images/billDetails.png">
 
 <hr />
