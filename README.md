@@ -26,7 +26,7 @@
 <img src="./Images/insertDiningTable.png">
 
 <hr />
-<h3> DiningTable Controller -- editing dining table </h3>
+<h3> DiningTable Controller -- editing dining table. The Back To Table List link will redirect to viewing all dining tables view.</h3>
 <img src="./Images/editDiningTable.png">
 
 <hr />
@@ -46,7 +46,7 @@
 <img src="./Images/insertFood.png">
 
 <hr />
-<h3> Food Controller -- editing food </h3>
+<h3> Food Controller -- editing food. The Back To List link will redirect to viewing all foods view. </h3>
 <img src="./Images/editFood.png">
 
 <hr />
@@ -98,7 +98,7 @@
 <img src="./Images/billDetails.png">
 
 <hr />
-<h3> Repository Controller -- viewing the order summary of all paid and unpaid orders. /h3>
+<h3> Repository Controller -- viewing the order summary of all paid and unpaid orders. </h3>
 <img src="./Images/viewAllOrders.png">
   
 <hr />
