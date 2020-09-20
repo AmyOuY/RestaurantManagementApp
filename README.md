@@ -18,7 +18,7 @@
 <img src="./Images/editPerson.png">
 
 <hr />
-<h3> Person Controller -- viewing all employees. The Edit link allows redirecting to the Edit view and the Delete link allows direct deletion of the employee. </h3>
+<h3> Person Controller -- viewing all employees. The Create New Employee link and the Edit link allows redirecting to the insert new employee view and the edit employee view respectively. And the Delete link allows direct deletion of the employee. </h3>
 <img src="./Images/viewPersons.png">
 
 <hr />
@@ -30,7 +30,7 @@
 <img src="./Images/editDiningTable.png">
 
 <hr />
-<h3> DiningTable Controller -- viewing all dining tables. The Edit and the Delete link allows editing and deleting the dining table respectively. </h3>
+<h3> DiningTable Controller -- viewing all dining tables. The Create New Dining Table link, the Edit link and the Delete link allows inserting, editing and deleting the dining table respectively. </h3>
 <img src="./Images/viewDiningTables.png">
 
 <hr />
@@ -38,7 +38,7 @@
 <img src="./Images/insertFoodType.png">
 
 <hr />
-<h3> Food Controller -- viewing all food types. The Delete link directly deletes the corresponding food type. </h3>
+<h3> Food Controller -- viewing all food types. The Create New link redirects to inserting food type view and the Delete link directly deletes the corresponding food type. </h3>
 <img src="./Images/viewFoodTypes.png">
 
 <hr />
@@ -50,7 +50,7 @@
 <img src="./Images/editFood.png">
 
 <hr />
-<h3> Food Controller -- viewing all foods, with each food belongs to a specific food type. The Edit, Details and Delete link allows editing food, viewing food details and deleting food respectively. </h3>
+<h3> Food Controller -- viewing all foods, with each food belongs to a specific food type. The Create New Food link, Edit link, Details link and Delete link allows inserting new food, editing food, viewing food details and deleting food respectively. </h3>
 <img src="./Images/viewFoods.png">
 
 <hr />
@@ -58,11 +58,11 @@
 <img src="./Images/insertOrder.png">
 
 <hr />
-<h3> Order Controller -- viewing the order details of a specific dining table. In addition to the above View Order Summary request, the Search Order action can also lead to this page. The Edit, Details and Delete link allows editing ordered food, viewing ordered food details and deleting ordered food respectively. If there is no question about the order for this specific dining table we can type in the table number and submit the order. </h3>
+<h3> Order Controller -- viewing the order details of a specific dining table. In addition to the above View Order Summary request, the Search Order action can also lead to this page. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food details and deleting ordered food respectively. If there is no question about the order for this specific dining table we can type in the table number and submit the order. The order needs to be submitted again whenever the order details were changed. </h3>
 <img src="./Images/orderDetails.png">
 
 <hr />
-<h3> Order Controller -- viewing one ordered food of a specific dining table</h3>
+<h3> Order Controller -- viewing one ordered food of a specific dining table. The Edit link allows editing this ordered food and the Back To Order List link allows redirecting to the order details of the specific dining table. </h3>
 <img src="./Images/orderDetail.png">
 
 <hr />
@@ -78,7 +78,7 @@
 <img src="./Images/noOrderError.png">
 
 <hr />
-<h3> Order Controller -- viewing the summary of all active orders. The Edit, Details and Delete link allows editing order summary, viewing ordered food details and deleting order summary respectively. </h3>
+<h3> Order Controller -- viewing the order summary of all active orders. The Create New Order link, Edit link, Details link and Delete link allows inserting new order, editing order summary, viewing ordered food details and deleting order summary respectively. </h3>
 <img src="./Images/viewActiveOrders.png">
 
 <hr />
@@ -86,7 +86,7 @@
 <img src="./Images/editOrder.png">
 
 <hr />
-<h3> Order Controller -- viewing ordered food details of a specific table. The Edit, Details and Delete link allows editing ordered food, viewing ordered food details and deleting ordered food respectively. </h3>
+<h3> Order Controller -- viewing ordered food details of a specific table. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food details and deleting ordered food respectively. </h3>
 <img src="./Images/GetOrderDetails.png">
 
 <hr />
@@ -94,7 +94,7 @@
 <img src="./Images/searchBill.png">
 
 <hr />
-<h3> Bill Controller -- viewing the bill details returned by bill search. If there is no question about the bill we can type in the table number and request bill payment. </h3>
+<h3> Bill Controller -- viewing the bill details returned by bill search. If there is no question about the bill we can type in the table number and request bill payment. The Back To Order List link allows redirecting to the summary of all active orders page.</h3>
 <img src="./Images/billDetails.png">
 
 <hr />
