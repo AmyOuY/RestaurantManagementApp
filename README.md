@@ -2,7 +2,7 @@
 
 
 <hr />
-<h3> Home Page with all controllers shown as dropdown lists in the menu bar </h3>
+<h3> Home Page with controllers shown as dropdown lists in the menu bar </h3>
 <img src="./Images/home.png">
 
 <hr />
@@ -18,35 +18,35 @@
 <img src="./Images/editPerson.png">
 
 <hr />
-<h3> Person Controller -- viewing all employees. The Create New Employee link and the Edit link allows redirecting to the insert new employee view and the edit employee view respectively. And the Delete link allows direct deletion of the employee. </h3>
+<h3> Person Controller -- viewing all employees. The Create New Employee link and the Edit link allows redirecting to the inserting new employee view and the editing employee view respectively. The Delete link directly deletes employee. </h3>
 <img src="./Images/viewPersons.png">
 
 <hr />
-<h3> DiningTable Controller -- inserting new dining table into database. The Back To Table List link will redirect to viewing all dining tables view. </h3> 
+<h3> DiningTable Controller -- inserting new dining table into database, with link redirecting to viewing all dining tables view. </h3> 
 <img src="./Images/insertDiningTable.png">
 
 <hr />
-<h3> DiningTable Controller -- editing dining table. The Back To Table List link will redirect to viewing all dining tables view.</h3>
+<h3> DiningTable Controller -- editing dining table, with link redirecting to viewing all dining tables view.</h3>
 <img src="./Images/editDiningTable.png">
 
 <hr />
-<h3> DiningTable Controller -- viewing all dining tables. The Create New Dining Table link, the Edit link and the Delete link allows inserting, editing and deleting the dining table respectively. </h3>
+<h3> DiningTable Controller -- viewing all dining tables. The Create New Dining Table link, Edit link and Delete link allows inserting, editing and deleting dining table respectively. </h3>
 <img src="./Images/viewDiningTables.png">
 
 <hr />
-<h3> Food Controller -- inserting new food type into database. The Back To Food Type List link will redirect to viewing all food types view. </h3>
+<h3> Food Controller -- inserting new food type into database, with link redirecting to viewing all food types view. </h3>
 <img src="./Images/insertFoodType.png">
 
 <hr />
-<h3> Food Controller -- viewing all food types. The Create New link redirects to inserting food type view and the Delete link directly deletes the corresponding food type. </h3>
+<h3> Food Controller -- viewing all food types. The Create New link redirects to inserting food type view and the Delete link directly deletes the food type. </h3>
 <img src="./Images/viewFoodTypes.png">
 
 <hr />
-<h3> Food Controller -- inserting new food into database. The Back To Food List link will redirect to viewing all foods view. </h3>
+<h3> Food Controller -- inserting new food into database, with link redirecting to viewing all foods view. </h3>
 <img src="./Images/insertFood.png">
 
 <hr />
-<h3> Food Controller -- editing food. The Back To List link will redirect to viewing all foods view. </h3>
+<h3> Food Controller -- editing food, with link redirecting to viewing all foods view. </h3>
 <img src="./Images/editFood.png">
 
 <hr />
@@ -54,11 +54,11 @@
 <img src="./Images/viewFoods.png">
 
 <hr />
-<h3> Order Controller -- inserting new food order for a specific dining table. The table number and server name can be selected from the dropdown lists. Both the food type list and food name list are cascading dropdowns. A selected food type will trigger foods that belong to this food type to populate in the food name dropdown. When a certain food name is chosen its price will be automatically filled in the price field. The View Order Summary button allows us to view the order details of the provided dining table number. </h3>
+<h3> Order Controller -- inserting new food order for a specific dining table. The table number and server name can be selected from the dropdown lists. Both the food type list and food name list are cascading dropdowns. A selected food type will trigger foods that belong to this food type to populate in the food name dropdown. When a certain food name is chosen its price will be automatically filled in the price field. The View Order Summary button allows viewing the order details of the provided dining table number. </h3>
 <img src="./Images/insertOrder.png">
 
 <hr />
-<h3> Order Controller -- viewing the order details of a specific dining table. In addition to the above View Order Summary request, the Search Order action can also lead to this page. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food details and deleting ordered food respectively. If there is no question about the order for this specific dining table we can type in the table number and submit the order. The order needs to be submitted again whenever the order details were changed. </h3>
+<h3> Order Controller -- viewing the order details of a specific dining table. In addition to the above View Order Summary request, the Search Order action can also lead to this page. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food and deleting ordered food respectively. If there is no question about the order for this specific dining table we can type in the table number and submit the order. The order needs to be submitted again whenever the order details were changed. </h3>
 <img src="./Images/orderDetails.png">
 
 <hr />
@@ -86,7 +86,7 @@
 <img src="./Images/editOrder.png">
 
 <hr />
-<h3> Order Controller -- viewing ordered food details of a specific table. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food details and deleting ordered food respectively. </h3>
+<h3> Order Controller -- viewing ordered food details of a specific table. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food and deleting ordered food respectively. </h3>
 <img src="./Images/GetOrderDetails.png">
 
 <hr />
@@ -94,7 +94,7 @@
 <img src="./Images/searchBill.png">
 
 <hr />
-<h3> Bill Controller -- viewing the bill details returned by bill search. If there is no question about the bill we can press the Pay Bill button to request bill payment. The Back To Order List link allows redirecting to the summary of all active orders page.</h3>
+<h3> Bill Controller -- viewing the bill details returned by bill search. If there is no question about the bill we can press the Pay Bill button to request bill payment. The Back To Order List link allows redirecting to the summary of all active orders view.</h3>
 <img src="./Images/billDetails.png">
 
 <hr />
