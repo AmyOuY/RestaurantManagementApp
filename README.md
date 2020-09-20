@@ -1,5 +1,9 @@
 # Restaurant Management App (.NETCore3.1 MVC)
 
+<h2> A Web Application that allows users to manage employees, dining tables, foods and orders in the restaurant with user authentication and authorization </h2>
+<h2> Front-end was implemented with ASP.NET Core3.1 MVC using Dependency Injection and Async/Await </h2>
+<h2> Back-end data storage and access was implemented with Microsoft SQL Server using Class Library calls with Dapper </h2>
+
 
 <hr />
 <h3> Home Page with controllers shown as dropdown lists in the menu bar </h3>
@@ -18,7 +22,7 @@
 <img src="./Images/editPerson.png">
 
 <hr />
-<h3> Person Controller -- viewing all employees. The Create New Employee link and the Edit link allows redirecting to the inserting new employee view and the editing employee view respectively. The Delete link directly deletes employee. </h3>
+<h3> Person Controller -- viewing all employees. The Create New Employee link and the Edit link allows redirecting to the inserting new employee view and the editing employee view respectively. The Delete link directly deletes the employee. </h3>
 <img src="./Images/viewPersons.png">
 
 <hr />
@@ -30,7 +34,7 @@
 <img src="./Images/editDiningTable.png">
 
 <hr />
-<h3> DiningTable Controller -- viewing all dining tables. The Create New Dining Table link, Edit link and Delete link allows inserting, editing and deleting dining table respectively. </h3>
+<h3> DiningTable Controller -- viewing all dining tables. The Create New Dining Table link, Edit link and Delete link allows inserting, editing and deleting the dining table respectively. </h3>
 <img src="./Images/viewDiningTables.png">
 
 <hr />
@@ -58,7 +62,7 @@
 <img src="./Images/insertOrder.png">
 
 <hr />
-<h3> Order Controller -- viewing the order details of a specific dining table. In addition to the above View Order Summary request, the Search Order action can also lead to this page. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food and deleting ordered food respectively. If there is no question about the order for this specific dining table we can type in the table number and submit the order. The order needs to be submitted again whenever the order details were changed. </h3>
+<h3> Order Controller -- viewing the order details of a specific dining table. In addition to the above View Order Summary request, the Search Order action can also lead to this page. The Add Order link, Edit link, Details link and Delete link allows inserting new order, editing ordered food, viewing ordered food and deleting ordered food respectively. If there is no question about the order for this specific dining table we can type in the table number and submit the order. The order needs to be submitted again whenever the order details are changed. </h3>
 <img src="./Images/orderDetails.png">
 
 <hr />
