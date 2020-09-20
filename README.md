@@ -18,7 +18,7 @@
 <img src="./Images/editPerson.png">
 
 <hr />
-<h3> Person Controller -- viewing all employees </h3>
+<h3> Person Controller -- viewing all employees. The Edit link allows redirecting to the Edit view and the Delete link allows direct deletion of the employee. </h3>
 <img src="./Images/viewPersons.png">
 
 <hr />
@@ -30,7 +30,7 @@
 <img src="./Images/editDiningTable.png">
 
 <hr />
-<h3> DiningTable Controller -- viewing all dining tables. The Edit link allows redirecting to the Edit view and the Delete link allows direct deletion of the dining table. </h3>
+<h3> DiningTable Controller -- viewing all dining tables. The Edit and the Delete link allows editing and deleting the dining table respectively. </h3>
 <img src="./Images/viewDiningTables.png">
 
 <hr />
