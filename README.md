@@ -1,9 +1,9 @@
-# Restaurant Management App (.NETCore3.1 MVC)
-
-<h2> A Web Application that allows users to manage employees, dining tables, foods and orders in the restaurant with user authentication and authorization </h2>
-<h2> Front-end was implemented with ASP.NET Core3.1 MVC using Dependency Injection and Async/Await </h2>
-<h2> Back-end data storage and access was implemented with Microsoft SQL Server using Class Library calls with Dapper </h2>
-
+# Restaurant Management App (C# .NETCore)
+<ul>
+  <li> A Web Application that allows users to manage employees, dining tables, foods and orders in the restaurant with authentication and authorization </li>
+  <li> The app was built with ASP.NET Core3.1 MVC with front-end Views created by Razor and Controllers implemented with Dependency Injection and Async/Await </li>
+  <li> Back-end data storage and access was implemented with Microsoft SQL Server through Class Library calls using Dapper </li>
+</ul>
 
 <hr />
 <h3> Home Page with controllers shown as dropdown lists in the menu bar </h3>
