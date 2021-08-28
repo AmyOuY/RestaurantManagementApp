@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RMData", "RMData\RMData.sqlproj", "{8AEB8430-ECA1-4F68-BFAA-099A8732C981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMDataLibrary", "RMDataLibrary\RMDataLibrary.csproj", "{43D604BA-86AC-4CD5-8FD5-9D41B0E6FD6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMDataLibrary", "RMDataLibrary\RMDataLibrary.csproj", "{43D604BA-86AC-4CD5-8FD5-9D41B0E6FD6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMUI", "RMUI\RMUI.csproj", "{62F3CDD7-79A1-453B-9AF0-9D4C59DD7A58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMUI", "RMUI\RMUI.csproj", "{62F3CDD7-79A1-453B-9AF0-9D4C59DD7A58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest", "XUnitTest\XUnitTest.csproj", "{63127608-827E-48AA-8435-AA4EECB95E7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{62F3CDD7-79A1-453B-9AF0-9D4C59DD7A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62F3CDD7-79A1-453B-9AF0-9D4C59DD7A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62F3CDD7-79A1-453B-9AF0-9D4C59DD7A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63127608-827E-48AA-8435-AA4EECB95E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63127608-827E-48AA-8435-AA4EECB95E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63127608-827E-48AA-8435-AA4EECB95E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63127608-827E-48AA-8435-AA4EECB95E7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

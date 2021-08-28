@@ -10,7 +10,7 @@ using RMUI.Models;
 
 namespace RMUI.Controllers
 {
-    [Authorize(Roles = "Manager")]
+    //[Authorize(Roles = "Manager")]
     public class FoodController : Controller
     {
         private readonly IFoodData _data;
@@ -26,6 +26,8 @@ namespace RMUI.Controllers
         }
 
 
+        [HttpPost]
+        [Route("/api/foodType")]
         public async Task<IActionResult> InsertFoodType(FoodTypeDisplayModel fType)
         {
             if (ModelState.IsValid)
@@ -42,7 +44,8 @@ namespace RMUI.Controllers
             return View();
         }
 
-
+        [HttpGet]
+        [Route("/api/food/foodTypes")]
         public async Task<IActionResult> ViewFoodTypes()
         {
             var results = await _data.GetAllFoodTypes();
@@ -62,6 +65,8 @@ namespace RMUI.Controllers
 
 
         // Insert food into database
+        [HttpPost]
+        [Route("/api/food")]
         public async Task<IActionResult> InsertFood(FoodDisplayModel food)
         {
             if (ModelState.IsValid)
@@ -87,6 +92,8 @@ namespace RMUI.Controllers
 
 
         // View all foods as as list
+        [HttpGet]
+        [Route("/api/food/foods")]
         public async Task<IActionResult> ViewFoods()
         {
             var allFoods = await _data.GetAllFoods();

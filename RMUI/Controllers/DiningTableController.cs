@@ -10,7 +10,7 @@ using RMUI.Models;
 
 namespace RMUI.Controllers
 {
-    [Authorize(Roles = "Manager")]
+    //[Authorize(Roles = "Manager")]
     public class DiningTableController : Controller
     {
         private readonly IDiningTableData _data;
@@ -26,6 +26,8 @@ namespace RMUI.Controllers
         }
 
         // Insert DiningTable into database
+        [HttpPost]
+        [Route("/api/diningTable")]
         public async Task<IActionResult> InsertDiningTable(DiningTableDisplayModel table)
         {
             if (ModelState.IsValid)
@@ -45,7 +47,10 @@ namespace RMUI.Controllers
         }
 
 
+
         // View all DiningTables as a list
+        [HttpGet]
+        [Route("/api/diningTable/diningTables")]
         public async Task<IActionResult> ViewDiningTables()
         {
             var allTables = await _data.GetAllTables();
